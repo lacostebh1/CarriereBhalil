@@ -178,7 +178,8 @@ export const translations = {
             caption3: "Zone d'Extraction",
             caption4: "Opérations sur Site",
             caption5: "Détail du Matériau",
-            caption6: "Vue d'Ensemble"
+            caption6: "Vue d'Ensemble",
+            caption7: "Activité d'Extraction"
         },
 
         // Video Section
@@ -394,7 +395,8 @@ export const translations = {
             caption3: "منطقة الاستخراج",
             caption4: "العمليات الميدانية",
             caption5: "تفاصيل المواد",
-            caption6: "نظرة شمولية"
+            caption6: "نظرة شمولية",
+            caption7: "نشاط الاستخراج"
         },
 
         // Video Section
