@@ -167,6 +167,7 @@ function renderContent() {
     renderSOP();
     renderSectors();
     renderGallery();
+    renderVideo();
     renderContact();
     renderFooter();
 }
@@ -356,6 +357,14 @@ function renderGallery() {
 
     const caption3 = $('#gallery-caption-3');
     if (caption3) caption3.textContent = t('gallery.caption3');
+}
+
+function renderVideo() {
+    const title = $('#video-title');
+    if (title) title.textContent = t('video.title');
+
+    const subtitle = $('#video-subtitle');
+    if (subtitle) subtitle.textContent = t('video.subtitle');
 }
 
 function renderContact() {

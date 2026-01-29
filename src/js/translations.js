@@ -179,6 +179,12 @@ export const translations = {
             caption3: "Zone d'Extraction"
         },
 
+        // Video Section
+        video: {
+            title: "Immersion au Cœur de la Carrière",
+            subtitle: "Découvrez notre processus d'extraction et nos installations en vidéo."
+        },
+
         // Contact Section
         contact: {
             title: "Contactez-nous",
@@ -385,6 +391,12 @@ export const translations = {
             caption1: "نظرة عامة",
             caption2: "منشآتنا",
             caption3: "منطقة الاستخراج"
+        },
+
+        // Video Section
+        video: {
+            title: "جولة في قلب المحجر",
+            subtitle: "اكتشف عملية الاستخراج ومنشآتنا في هذا الفيديو."
         },
 
         // Contact Section
