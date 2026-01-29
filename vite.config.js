@@ -5,7 +5,16 @@ export default defineConfig({
   publicDir: 'public',
   build: {
     outDir: 'dist',
-    assetsDir: 'assets'
+    assetsDir: 'assets',
+    rollupOptions: {
+      input: {
+        main: 'index.html',
+        clientLogin: 'src/pages/client/login.html',
+        clientDashboard: 'src/pages/client/dashboard.html',
+        adminLogin: 'src/pages/admin/login.html',
+        adminDashboard: 'src/pages/admin/dashboard.html'
+      }
+    }
   },
   server: {
     port: 3000,
