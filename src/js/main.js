@@ -357,6 +357,9 @@ function renderGallery() {
 
     const caption3 = $('#gallery-caption-3');
     if (caption3) caption3.textContent = t('gallery.caption3');
+
+    const caption4 = $('#gallery-caption-4');
+    if (caption4) caption4.textContent = t('gallery.caption4');
 }
 
 function renderVideo() {

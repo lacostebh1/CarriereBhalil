@@ -176,7 +176,8 @@ export const translations = {
             subtitle: "Découvrez nos installations et notre environnement de travail.",
             caption1: "Vue Panoramique",
             caption2: "Nos Installations",
-            caption3: "Zone d'Extraction"
+            caption3: "Zone d'Extraction",
+            caption4: "Opérations sur Site"
         },
 
         // Video Section
@@ -390,7 +391,8 @@ export const translations = {
             subtitle: "اكتشف منشآتنا وبيئة العمل.",
             caption1: "نظرة عامة",
             caption2: "منشآتنا",
-            caption3: "منطقة الاستخراج"
+            caption3: "منطقة الاستخراج",
+            caption4: "العمليات الميدانية"
         },
 
         // Video Section
