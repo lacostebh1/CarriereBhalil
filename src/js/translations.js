@@ -11,7 +11,8 @@ export const translations = {
             procedures: "Procédures",
             sectors: "Secteurs",
             contact: "Contact",
-            langSwitch: "العربية"
+            langSwitch: "العربية",
+            clientButton: "Espace Client"
         },
 
         // Hero Section
@@ -252,7 +253,8 @@ export const translations = {
             procedures: "الإجراءات",
             sectors: "القطاعات",
             contact: "اتصل بنا",
-            langSwitch: "Français"
+            langSwitch: "Français",
+            clientButton: "فضاء الزبناء"
         },
 
         // Hero Section
