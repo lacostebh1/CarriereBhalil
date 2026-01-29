@@ -177,7 +177,9 @@ export const translations = {
             caption1: "Vue Panoramique",
             caption2: "Nos Installations",
             caption3: "Zone d'Extraction",
-            caption4: "Opérations sur Site"
+            caption4: "Opérations sur Site",
+            caption5: "Détail du Matériau",
+            caption6: "Vue d'Ensemble"
         },
 
         // Video Section
@@ -392,7 +394,9 @@ export const translations = {
             caption1: "نظرة عامة",
             caption2: "منشآتنا",
             caption3: "منطقة الاستخراج",
-            caption4: "العمليات الميدانية"
+            caption4: "العمليات الميدانية",
+            caption5: "تفاصيل المواد",
+            caption6: "نظرة شمولية"
         },
 
         // Video Section

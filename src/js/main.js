@@ -360,6 +360,12 @@ function renderGallery() {
 
     const caption4 = $('#gallery-caption-4');
     if (caption4) caption4.textContent = t('gallery.caption4');
+
+    const caption5 = $('#gallery-caption-5');
+    if (caption5) caption5.textContent = t('gallery.caption5');
+
+    const caption6 = $('#gallery-caption-6');
+    if (caption6) caption6.textContent = t('gallery.caption6');
 }
 
 function renderVideo() {
