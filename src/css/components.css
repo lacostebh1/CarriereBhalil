@@ -1,0 +1,349 @@
+/* ============================================
+   Components - Reusable UI Elements
+   ============================================ */
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-2);
+    padding: var(--spacing-3) var(--spacing-6);
+    font-family: inherit;
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    border-radius: var(--radius-lg);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: var(--gradient-primary);
+    color: var(--color-white);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    color: var(--color-white);
+}
+
+.btn-secondary {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.btn-dark {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+}
+
+.btn-dark:hover {
+    background-color: var(--color-dark-gray);
+    color: var(--color-white);
+}
+
+.btn-whatsapp {
+    background-color: #25D366;
+    color: var(--color-white);
+}
+
+.btn-whatsapp:hover {
+    background-color: #128C7E;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    color: var(--color-white);
+}
+
+.btn-lg {
+    padding: var(--spacing-4) var(--spacing-8);
+    font-size: var(--font-size-lg);
+}
+
+.btn-sm {
+    padding: var(--spacing-2) var(--spacing-4);
+    font-size: var(--font-size-sm);
+}
+
+/* Cards */
+.card {
+    background-color: var(--color-white);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+}
+
+.card-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--spacing-4);
+    background: var(--gradient-card);
+    color: var(--color-white);
+}
+
+.card-body {
+    padding: var(--spacing-6);
+}
+
+.card-title {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-2);
+}
+
+.card-text {
+    color: var(--color-gray);
+    margin-bottom: var(--spacing-4);
+}
+
+/* Feature Card (with icon) */
+.feature-card {
+    text-align: center;
+    padding: var(--spacing-8);
+}
+
+.feature-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto var(--spacing-4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-xl);
+    font-size: var(--font-size-2xl);
+}
+
+/* Image Cards (like sectors in IBS) */
+.image-card {
+    position: relative;
+    height: 280px;
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+}
+
+.image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.image-card:hover img {
+    transform: scale(1.1);
+}
+
+.image-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-card);
+    display: flex;
+    align-items: flex-end;
+    padding: var(--spacing-6);
+}
+
+.image-card-title {
+    color: var(--color-white);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+}
+
+/* Badges */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--spacing-1) var(--spacing-3);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    border-radius: var(--radius-full);
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.badge-secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-dark);
+}
+
+.badge-outline {
+    background-color: transparent;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+}
+
+/* Tags (like "People", "Technology" in IBS hero) */
+.tag {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--spacing-2) var(--spacing-4);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    border-radius: var(--radius-full);
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--color-white);
+    backdrop-filter: blur(4px);
+}
+
+/* Accordion */
+.accordion {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.accordion-item {
+    border-bottom: 1px solid var(--color-light-gray);
+}
+
+.accordion-item:last-child {
+    border-bottom: none;
+}
+
+.accordion-header {
+    width: 100%;
+    padding: var(--spacing-5) var(--spacing-6);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-white);
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-dark);
+    text-align: left;
+    transition: background-color var(--transition-fast);
+}
+
+[dir="rtl"] .accordion-header {
+    text-align: right;
+}
+
+.accordion-header:hover {
+    background-color: var(--color-off-white);
+}
+
+.accordion-icon {
+    font-size: var(--font-size-xl);
+    transition: transform var(--transition-normal);
+}
+
+.accordion-item.active .accordion-icon {
+    transform: rotate(45deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    background-color: var(--color-off-white);
+    transition: max-height var(--transition-normal);
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 500px;
+}
+
+.accordion-body {
+    padding: var(--spacing-6);
+}
+
+.accordion-body ul {
+    list-style: disc;
+    padding-left: var(--spacing-6);
+}
+
+[dir="rtl"] .accordion-body ul {
+    padding-left: 0;
+    padding-right: var(--spacing-6);
+}
+
+.accordion-body li {
+    margin-bottom: var(--spacing-2);
+    color: var(--color-gray);
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    gap: var(--spacing-6);
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Input */
+.form-group {
+    margin-bottom: var(--spacing-4);
+}
+
+.form-label {
+    display: block;
+    margin-bottom: var(--spacing-2);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-dark);
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: var(--spacing-3) var(--spacing-4);
+    font-family: inherit;
+    font-size: var(--font-size-base);
+    border: 2px solid var(--color-light-gray);
+    border-radius: var(--radius-lg);
+    transition: border-color var(--transition-fast);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.form-textarea {
+    min-height: 120px;
+    resize: vertical;
+}

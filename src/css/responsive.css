@@ -1,0 +1,205 @@
+/* ============================================
+   Responsive Styles - Mobile First
+   ============================================ */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 768px) {
+
+    /* Typography adjustments */
+    h1 {
+        font-size: var(--font-size-4xl);
+    }
+
+    h2 {
+        font-size: var(--font-size-3xl);
+    }
+
+    h3 {
+        font-size: var(--font-size-2xl);
+    }
+
+    .hero-title {
+        font-size: var(--font-size-4xl);
+    }
+
+    /* Navigation */
+    .navbar-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--color-white);
+        flex-direction: column;
+        padding: var(--spacing-6);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .navbar-menu.active {
+        display: flex;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+        gap: var(--spacing-4);
+    }
+
+    .navbar-link {
+        padding: var(--spacing-3);
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+
+    .navbar-actions {
+        width: 100%;
+        justify-content: center;
+        margin-top: var(--spacing-4);
+        padding-top: var(--spacing-4);
+        border-top: 1px solid var(--color-light-gray);
+    }
+
+    .navbar-toggle {
+        display: block;
+    }
+
+    /* Hero */
+    .hero {
+        min-height: auto;
+        padding: var(--spacing-20) 0 var(--spacing-12);
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-8);
+    }
+
+    .hero-info {
+        display: none;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Sections */
+    .section {
+        padding: var(--spacing-12) 0;
+    }
+
+    /* Grids */
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: 1fr;
+    }
+
+    .sectors-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sector-card {
+        height: 200px;
+    }
+
+    /* Products */
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Contact */
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-8);
+    }
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-8);
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: var(--spacing-4);
+        text-align: center;
+    }
+
+    /* WhatsApp button */
+    .whatsapp-float {
+        bottom: var(--spacing-4);
+        right: var(--spacing-4);
+    }
+
+    [dir="rtl"] .whatsapp-float {
+        left: var(--spacing-4);
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero-title {
+        font-size: var(--font-size-5xl);
+    }
+
+    .hero-content {
+        grid-template-columns: 1.2fr 1fr;
+        gap: var(--spacing-8);
+    }
+
+    .sectors-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .advantages-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Large devices (desktops, 1024px and up) */
+@media (min-width: 1025px) {
+    .container {
+        padding: 0 var(--spacing-8);
+    }
+}
+
+/* RTL Specific Responsive Adjustments */
+@media (max-width: 768px) {
+    [dir="rtl"] .navbar-link {
+        text-align: center;
+    }
+}
+
+/* Print styles */
+@media print {
+
+    .navbar,
+    .whatsapp-float,
+    .btn {
+        display: none;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: var(--spacing-8) 0;
+    }
+
+    .section {
+        padding: var(--spacing-6) 0;
+        page-break-inside: avoid;
+    }
+}
