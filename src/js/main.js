@@ -166,6 +166,7 @@ function renderContent() {
     renderAdvantages();
     renderSOP();
     renderSectors();
+    renderGallery();
     renderContact();
     renderFooter();
 }
@@ -338,6 +339,23 @@ function renderSectors() {
       </div>
     `).join('');
     }
+}
+
+function renderGallery() {
+    const title = $('#gallery-title');
+    if (title) title.textContent = t('gallery.title');
+
+    const subtitle = $('#gallery-subtitle');
+    if (subtitle) subtitle.textContent = t('gallery.subtitle');
+
+    const caption1 = $('#gallery-caption-1');
+    if (caption1) caption1.textContent = t('gallery.caption1');
+
+    const caption2 = $('#gallery-caption-2');
+    if (caption2) caption2.textContent = t('gallery.caption2');
+
+    const caption3 = $('#gallery-caption-3');
+    if (caption3) caption3.textContent = t('gallery.caption3');
 }
 
 function renderContact() {

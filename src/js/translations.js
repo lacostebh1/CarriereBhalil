@@ -170,6 +170,15 @@ export const translations = {
             ]
         },
 
+        // Gallery Section
+        gallery: {
+            title: "Notre Carrière en Images",
+            subtitle: "Découvrez nos installations et notre environnement de travail.",
+            caption1: "Vue Panoramique",
+            caption2: "Nos Installations",
+            caption3: "Zone d'Extraction"
+        },
+
         // Contact Section
         contact: {
             title: "Contactez-nous",
@@ -367,6 +376,15 @@ export const translations = {
                 { name: "الأشغال العمومية", icon: "🏭" },
                 { name: "التهيئة", icon: "🌱" }
             ]
+        },
+
+        // Gallery Section
+        gallery: {
+            title: "صور المحجر",
+            subtitle: "اكتشف منشآتنا وبيئة العمل.",
+            caption1: "نظرة عامة",
+            caption2: "منشآتنا",
+            caption3: "منطقة الاستخراج"
         },
 
         // Contact Section
