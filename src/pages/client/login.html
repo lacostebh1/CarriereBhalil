@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espace Client - Carrière Bhalil</title>
+    <link rel="stylesheet" href="/src/css/variables.css">
+    <link rel="stylesheet" href="/src/css/base.css">
+    <link rel="stylesheet" href="/src/css/components.css">
+    <style>
+        body {
+            background-color: var(--color-off-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .login-card {
+            background: white;
+            padding: var(--spacing-8);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-xl);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .login-logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-6);
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-card">
+        <a href="/" class="login-logo">Carrière Bhalil</a>
+        <h2 style="margin-bottom: var(--spacing-6);">Espace Client</h2>
+
+        <form action="./dashboard.html">
+            <div class="form-group" style="text-align: left;">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-input" required placeholder="client@example.com">
+            </div>
+
+            <div class="form-group" style="text-align: left;">
+                <label class="form-label">Mot de passe</label>
+                <input type="password" class="form-input" required placeholder="••••••••">
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Se Connecter</button>
+        </form>
+
+        <p style="margin-top: var(--spacing-4); font-size: var(--font-size-sm); color: var(--color-gray);">
+            <a href="/" style="color: var(--color-primary);">Retour à l'accueil</a>
+        </p>
+    </div>
+</body>
+
+</html>

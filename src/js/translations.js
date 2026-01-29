@@ -207,6 +207,30 @@ export const translations = {
             formSubmit: "Envoyer la Demande"
         },
 
+        // Portals
+        client: {
+            dashboard: "Tableau de Bord",
+            orders: "Mes Commandes",
+            invoices: "Factures",
+            tracking: "Suivi Livraison",
+            welcome: "Bienvenue",
+            overview: "Aperçu Général",
+            activeOrders: "Commandes en cours",
+            unpaid: "Factures Impayées",
+            volume: "Volume ce mois"
+        },
+        admin: {
+            dashboard: "Vue d'ensemble",
+            employees: "Employés",
+            contracts: "Contrats",
+            declarations: "Déclarations CNSS",
+            portalTitle: "Portail Administratif & RH",
+            hrOverview: "Ressources Humaines",
+            totalEmployees: "Effectif Total",
+            expiringContracts: "Contrats à échéance",
+            declarationsStatus: "Déclaration CNSS"
+        },
+
         // Footer
         footer: {
             description: "Carrière Bhalil - Votre partenaire de confiance pour les granulats de qualité au Maroc. Extraction durable du calcaire dolomitique.",
@@ -420,8 +444,32 @@ export const translations = {
             formName: "الاسم الكامل",
             formEmail: "البريد الإلكتروني",
             formPhone: "الهاتف",
-            formMessage: "رسالتكم",
+            formMessage: "رسالتك",
             formSubmit: "إرسال الطلب"
+        },
+
+        // Portals
+        client: {
+            dashboard: "لوحة القيادة",
+            orders: "طلباتي",
+            invoices: "الفواتير",
+            tracking: "تتبع الشحنة",
+            welcome: "مرحباً",
+            overview: "نظرة عامة",
+            activeOrders: "طلبات جارية",
+            unpaid: "فواتير غير مدفوعة",
+            volume: "حجم هذا الشهر"
+        },
+        admin: {
+            dashboard: "نظرة عامة",
+            employees: "الموظفين",
+            contracts: "العقود",
+            declarations: "تصاريح CNSS",
+            portalTitle: "البوابة الإدارية والموارد البشرية",
+            hrOverview: "الموارد البشرية",
+            totalEmployees: "إجمالي الموظفين",
+            expiringContracts: "عقود ستنتهي",
+            declarationsStatus: "حالة التصريح"
         },
 
         // Footer
