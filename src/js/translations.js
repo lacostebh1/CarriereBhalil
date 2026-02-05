@@ -196,9 +196,11 @@ export const translations = {
             phone: "Téléphone",
             phoneNumber: "+212 661 350 968",
             email: "Email",
-            emailAddress: "contact@carriere-bhalil.ma",
-            location: "Localisation",
-            locationAddress: "Bhalil, Province de Sefrou, Maroc",
+            emailAddress: "contact@hh-istitmar.ma",
+            location: "Siège Social",
+            locationAddress: "AV Hassan 2, Hay M'sila, Bhalil, Sefrou, Maroc",
+            quarryLocation: "Localisation Carrière",
+            quarryAddress: "À proximité de Aghbalou Aqorar, Bhalil",
             whatsapp: "WhatsApp",
             formTitle: "Demande de Devis",
             formName: "Nom complet",
@@ -234,13 +236,13 @@ export const translations = {
 
         // Footer
         footer: {
-            description: "Carrière Bhalil - Votre partenaire de confiance pour les granulats de qualité au Maroc. Extraction durable du calcaire dolomitique.",
+            description: "SOCIETE H.H ISTITMAR - Votre partenaire de confiance pour les granulats de qualité au Maroc. Exploitant de carrière à Bhalil, Sefrou.",
             quickLinks: "Liens Rapides",
             products: "Produits",
             procedures: "Procédures",
             contact: "Contact",
             legal: "Mentions Légales",
-            copyright: "© 2026 Carrière Bhalil. Tous droits réservés.",
+            copyright: "© 2026 SOCIETE H.H ISTITMAR. Tous droits réservés.",
             madeWith: "Qualité & Durabilité 🇲🇦"
         }
     },
@@ -438,9 +440,11 @@ export const translations = {
             phone: "الهاتف",
             phoneNumber: "+212 661 350 968",
             email: "البريد الإلكتروني",
-            emailAddress: "contact@carriere-bhalil.ma",
-            location: "الموقع",
-            locationAddress: "بهليل، إقليم صفرو، المغرب",
+            emailAddress: "contact@hh-istitmar.ma",
+            location: "المقر الاجتماعي",
+            locationAddress: "شارع الحسن الثاني، حي مسيلة، بهليل، صفرو، المغرب",
+            quarryLocation: "موقع المحجر",
+            quarryAddress: "بالقرب من أغبالو أقرار، بهليل",
             whatsapp: "واتساب",
             formTitle: "طلب عرض سعر",
             formName: "الاسم الكامل",
@@ -476,13 +480,13 @@ export const translations = {
 
         // Footer
         footer: {
-            description: "محجر بهليل - شريككم الموثوق للحصى عالية الجودة بالمغرب. استخراج مستدام للحجر الجيري الدولوميتي.",
+            description: "شركة ح.ح إستثمار - شريككم الموثوق للحصى عالية الجودة بالمغرب. مستغل محجر ببهليل، صفرو.",
             quickLinks: "روابط سريعة",
             products: "المنتجات",
             procedures: "الإجراءات",
             contact: "اتصل بنا",
             legal: "الشروط القانونية",
-            copyright: "© 2026 محجر بهليل. جميع الحقوق محفوظة.",
+            copyright: "© 2026 شركة ح.ح إستثمار. جميع الحقوق محفوظة.",
             madeWith: "الجودة والاستدامة 🇲🇦"
         }
     }
