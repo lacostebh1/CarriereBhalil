@@ -125,12 +125,16 @@
         </a>
 
         <h2>Connexion RH</h2>
-        <p class="hint">Portail administratif réservé au personnel autorisé.</p>
+        <p class="hint" id="login-hint">Portail administratif réservé au personnel autorisé.</p>
 
-        <form action="./dashboard.html">
+        <div id="login-error" style="display:none; background: var(--color-error-soft); color: var(--color-error);
+             padding: 0.6rem 1rem; border-radius: var(--radius-md); font-size: var(--font-size-sm);
+             margin-bottom: var(--spacing-4); text-align: start;"></div>
+
+        <form id="login-form">
             <div class="form-group">
-                <label class="form-label" for="login-user">Identifiant</label>
-                <input type="text" id="login-user" class="form-input" required placeholder="admin"
+                <label class="form-label" for="login-user">Email</label>
+                <input type="email" id="login-user" class="form-input" required placeholder="admin@hh-istitmar.ma"
                     autocomplete="username">
             </div>
 
@@ -140,11 +144,58 @@
                     autocomplete="current-password">
             </div>
 
-            <button type="submit" class="btn btn-dark btn-lg btn-block">Accéder au Portail</button>
+            <button type="submit" class="btn btn-dark btn-lg btn-block" id="login-submit">Accéder au Portail</button>
         </form>
 
         <a href="/" class="back-link">← Retour à l'accueil</a>
     </div>
+
+    <script type="module">
+        import { isCloud, signIn, getSession } from '/src/js/store.js';
+
+        const form = document.getElementById('login-form');
+        const errorBox = document.getElementById('login-error');
+        const hint = document.getElementById('login-hint');
+        const submitBtn = document.getElementById('login-submit');
+
+        if (!isCloud) {
+            // Supabase non configuré : mode démonstration, accès direct
+            hint.textContent = 'Mode démonstration (Supabase non configuré) — toute saisie donne accès.';
+            document.getElementById('login-user').type = 'text';
+        } else {
+            // Déjà connecté ? → dashboard
+            getSession().then(session => {
+                if (session) location.href = './dashboard.html';
+            });
+        }
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            errorBox.style.display = 'none';
+
+            if (!isCloud) {
+                location.href = './dashboard.html';
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Connexion…';
+            try {
+                await signIn(
+                    document.getElementById('login-user').value.trim(),
+                    document.getElementById('login-password').value
+                );
+                location.href = './dashboard.html';
+            } catch (err) {
+                errorBox.textContent = /invalid/i.test(err.message)
+                    ? 'Email ou mot de passe incorrect.'
+                    : 'Erreur de connexion : ' + err.message;
+                errorBox.style.display = 'block';
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Accéder au Portail';
+            }
+        });
+    </script>
 </body>
 
 </html>

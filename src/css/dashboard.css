@@ -844,3 +844,39 @@ body {
     max-width: none;
   }
 }
+
+/* ---------- Badge de mode (démo / cloud) ---------- */
+
+.mode-badge {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  padding: 0.3rem 0.7rem;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.mode-badge.mode-demo {
+  background: var(--color-warning-soft);
+  color: var(--color-warning);
+}
+
+.mode-badge.mode-cloud {
+  background: var(--color-success-soft);
+  color: var(--color-success);
+}
+
+/* ---------- Ajustements RTL ---------- */
+
+[dir="rtl"] .menu-group-label {
+  letter-spacing: 0;
+}
+
+[dir="rtl"] .header-date {
+  text-transform: none;
+}
+
+@media (max-width: 760px) {
+  .header-date {
+    display: none;
+  }
+}
