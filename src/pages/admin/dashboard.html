@@ -17,56 +17,56 @@
     <aside class="sidebar">
         <a href="/" class="sidebar-brand">
             <span class="logo-mark">HH</span>
-            <span>Gestion H.H</span>
+            <span data-i18n="nav.brand">Gestion H.H</span>
         </a>
         <nav class="sidebar-menu" id="sidebar-menu">
-            <span class="menu-group-label">Pilotage</span>
+            <span class="menu-group-label" data-i18n="nav.group.pilotage">Pilotage</span>
             <a href="#dashboard" class="nav-item" data-view="dashboard">
-                <span>📊</span> <span>Tableau de bord</span>
+                <span>📊</span> <span data-i18n="nav.dashboard">Tableau de bord</span>
             </a>
 
-            <span class="menu-group-label">Ressources Humaines</span>
+            <span class="menu-group-label" data-i18n="nav.group.rh">Ressources Humaines</span>
             <a href="#employees" class="nav-item" data-view="employees">
-                <span>👥</span> <span>Salariés</span>
+                <span>👥</span> <span data-i18n="nav.employees">Salariés</span>
             </a>
             <a href="#payroll" class="nav-item" data-view="payroll">
-                <span>💵</span> <span>Paie</span>
+                <span>💵</span> <span data-i18n="nav.payroll">Paie</span>
             </a>
             <a href="#leaves" class="nav-item" data-view="leaves">
-                <span>🏖️</span> <span>Congés & Absences</span>
+                <span>🏖️</span> <span data-i18n="nav.leaves">Congés & Absences</span>
             </a>
             <a href="#declarations" class="nav-item" data-view="declarations">
-                <span>📑</span> <span>Déclarations</span>
+                <span>📑</span> <span data-i18n="nav.declarations">Déclarations</span>
             </a>
 
-            <span class="menu-group-label">Commercial & Finance</span>
+            <span class="menu-group-label" data-i18n="nav.group.commercial">Commercial & Finance</span>
             <a href="#clients" class="nav-item" data-view="clients">
-                <span>🤝</span> <span>Clients</span>
+                <span>🤝</span> <span data-i18n="nav.clients">Clients</span>
             </a>
             <a href="#invoices" class="nav-item" data-view="invoices">
-                <span>🧾</span> <span>Facturation</span>
+                <span>🧾</span> <span data-i18n="nav.invoices">Facturation</span>
             </a>
             <a href="#suppliers" class="nav-item" data-view="suppliers">
-                <span>🚚</span> <span>Fournisseurs</span>
+                <span>🚚</span> <span data-i18n="nav.suppliers">Fournisseurs</span>
             </a>
             <a href="#expenses" class="nav-item" data-view="expenses">
-                <span>💸</span> <span>Dépenses</span>
+                <span>💸</span> <span data-i18n="nav.expenses">Dépenses</span>
             </a>
             <a href="#contracts" class="nav-item" data-view="contracts">
-                <span>📝</span> <span>Contrats</span>
+                <span>📝</span> <span data-i18n="nav.contracts">Contrats</span>
             </a>
 
-            <span class="menu-group-label">Comptabilité</span>
+            <span class="menu-group-label" data-i18n="nav.group.compta">Comptabilité</span>
             <a href="#accounting" class="nav-item" data-view="accounting">
-                <span>📚</span> <span>Journal & TVA</span>
+                <span>📚</span> <span data-i18n="nav.accounting">Journal & TVA</span>
             </a>
         </nav>
         <div class="sidebar-footer">
             <a href="/" class="nav-item">
-                <span>🌐</span> <span>Voir le site</span>
+                <span>🌐</span> <span data-i18n="nav.site">Voir le site</span>
             </a>
             <a href="./login.html" class="nav-item" id="logout-btn">
-                <span>🚪</span> <span>Déconnexion</span>
+                <span>🚪</span> <span data-i18n="nav.logout">Déconnexion</span>
             </a>
         </div>
     </aside>
@@ -76,7 +76,11 @@
         <header class="top-header">
             <h2 id="view-title">Tableau de bord</h2>
             <div class="header-user">
+                <span class="mode-badge" id="mode-badge"></span>
                 <span class="header-date" id="header-date"></span>
+                <button id="lang-switcher" class="btn btn-ghost">
+                    <span id="lang-text">العربية</span>
+                </button>
                 <div class="user-avatar">AD</div>
             </div>
         </header>
