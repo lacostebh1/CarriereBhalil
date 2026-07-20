@@ -4,68 +4,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administration - Carrière Bhalil</title>
+    <title>Administration - SOCIETE H.H ISTITMAR</title>
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231B2430'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='26' font-weight='800' fill='white' text-anchor='middle'%3EHH%3C/text%3E%3C/svg%3E">
     <link rel="stylesheet" href="/src/css/variables.css">
     <link rel="stylesheet" href="/src/css/base.css">
     <link rel="stylesheet" href="/src/css/components.css">
     <style>
         body {
-            background-color: var(--color-dark);
             display: flex;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
+            padding: var(--spacing-4);
+            background:
+                radial-gradient(ellipse at top right, rgba(199, 126, 36, 0.12), transparent 50%),
+                var(--gradient-dark);
         }
 
         .login-card {
-            background: white;
-            padding: var(--spacing-8);
-            border-radius: var(--radius-xl);
+            background: var(--color-white);
+            padding: var(--spacing-10) var(--spacing-8);
+            border-radius: var(--radius-2xl);
             box-shadow: var(--shadow-xl);
             width: 100%;
-            max-width: 400px;
+            max-width: 420px;
             text-align: center;
         }
 
         .login-logo {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--color-dark);
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-3);
+            text-decoration: none;
             margin-bottom: var(--spacing-6);
-            display: block;
+        }
+
+        .login-logo .mark {
+            width: 52px;
+            height: 52px;
+            display: grid;
+            place-items: center;
+            background: var(--gradient-dark);
+            color: var(--color-white);
+            font-family: var(--font-heading);
+            font-weight: var(--font-weight-extrabold);
+            font-size: var(--font-size-xl);
+            border-radius: var(--radius-lg);
+        }
+
+        .login-logo .name {
+            text-align: start;
+            font-family: var(--font-heading);
+            font-weight: var(--font-weight-extrabold);
+            color: var(--color-dark);
+            line-height: 1.2;
         }
 
         .admin-badge {
-            background: var(--color-error);
-            color: white;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.75rem;
+            display: inline-block;
+            background: var(--color-error-soft);
+            color: var(--color-error);
+            padding: 0.2rem 0.6rem;
+            border-radius: var(--radius-full);
+            font-size: 0.7rem;
+            font-weight: var(--font-weight-bold);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.1em;
+            margin-top: 4px;
+        }
+
+        .login-card h2 {
+            font-size: var(--font-size-2xl);
+            margin-bottom: var(--spacing-2);
+        }
+
+        .login-card .hint {
+            color: var(--color-gray);
+            font-size: var(--font-size-sm);
+            margin-bottom: var(--spacing-6);
+        }
+
+        .form-group {
+            text-align: start;
+        }
+
+        .btn-dark {
+            background: var(--gradient-dark);
+            color: var(--color-white);
+        }
+
+        .btn-dark:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: var(--spacing-5);
+            font-size: var(--font-size-sm);
+            color: var(--color-gray);
+            text-decoration: none;
+            font-weight: var(--font-weight-semibold);
+        }
+
+        .back-link:hover {
+            color: var(--color-dark);
         }
     </style>
 </head>
 
 <body>
     <div class="login-card">
-        <a href="/" class="login-logo">CB <span class="admin-badge">Admin</span></a>
-        <h2 style="margin-bottom: var(--spacing-6);">Connexion RH</h2>
+        <a href="/" class="login-logo">
+            <span class="mark">HH</span>
+            <span class="name">
+                H.H ISTITMAR
+                <span class="admin-badge">Admin</span>
+            </span>
+        </a>
+
+        <h2>Connexion RH</h2>
+        <p class="hint">Portail administratif réservé au personnel autorisé.</p>
 
         <form action="./dashboard.html">
-            <div class="form-group" style="text-align: left;">
-                <label class="form-label">Identifiant</label>
-                <input type="text" class="form-input" required placeholder="admin">
+            <div class="form-group">
+                <label class="form-label" for="login-user">Identifiant</label>
+                <input type="text" id="login-user" class="form-input" required placeholder="admin"
+                    autocomplete="username">
             </div>
 
-            <div class="form-group" style="text-align: left;">
-                <label class="form-label">Mot de passe</label>
-                <input type="password" class="form-input" required placeholder="••••••••">
+            <div class="form-group">
+                <label class="form-label" for="login-password">Mot de passe</label>
+                <input type="password" id="login-password" class="form-input" required placeholder="••••••••"
+                    autocomplete="current-password">
             </div>
 
-            <button type="submit" class="btn btn-secondary"
-                style="width: 100%; background-color: var(--color-dark); color: white;">Accéder au Portail</button>
+            <button type="submit" class="btn btn-dark btn-lg btn-block">Accéder au Portail</button>
         </form>
+
+        <a href="/" class="back-link">← Retour à l'accueil</a>
     </div>
 </body>
 

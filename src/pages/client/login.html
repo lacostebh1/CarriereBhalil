@@ -4,61 +4,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Espace Client - Carrière Bhalil</title>
+    <title>Espace Client - SOCIETE H.H ISTITMAR</title>
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23C77E24'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='26' font-weight='800' fill='white' text-anchor='middle'%3EHH%3C/text%3E%3C/svg%3E">
     <link rel="stylesheet" href="/src/css/variables.css">
     <link rel="stylesheet" href="/src/css/base.css">
     <link rel="stylesheet" href="/src/css/components.css">
     <style>
         body {
-            background-color: var(--color-off-white);
             display: flex;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
+            padding: var(--spacing-4);
+            background:
+                radial-gradient(ellipse at top left, rgba(199, 126, 36, 0.14), transparent 55%),
+                radial-gradient(ellipse at bottom right, rgba(27, 36, 48, 0.1), transparent 55%),
+                var(--color-off-white);
         }
 
         .login-card {
-            background: white;
-            padding: var(--spacing-8);
-            border-radius: var(--radius-xl);
+            background: var(--color-white);
+            padding: var(--spacing-10) var(--spacing-8);
+            border-radius: var(--radius-2xl);
+            border: var(--border-light);
             box-shadow: var(--shadow-xl);
             width: 100%;
-            max-width: 400px;
+            max-width: 420px;
             text-align: center;
         }
 
         .login-logo {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--color-primary);
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-3);
+            text-decoration: none;
             margin-bottom: var(--spacing-6);
+        }
+
+        .login-logo .mark {
+            width: 52px;
+            height: 52px;
+            display: grid;
+            place-items: center;
+            background: var(--gradient-primary);
+            color: var(--color-white);
+            font-family: var(--font-heading);
+            font-weight: var(--font-weight-extrabold);
+            font-size: var(--font-size-xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-primary);
+        }
+
+        .login-logo .name {
+            text-align: start;
+            font-family: var(--font-heading);
+            font-weight: var(--font-weight-extrabold);
+            color: var(--color-dark);
+            line-height: 1.2;
+        }
+
+        .login-logo .name small {
             display: block;
+            font-family: var(--font-primary);
+            font-size: 0.65rem;
+            font-weight: var(--font-weight-medium);
+            color: var(--color-gray);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        .login-card h2 {
+            font-size: var(--font-size-2xl);
+            margin-bottom: var(--spacing-2);
+        }
+
+        .login-card .hint {
+            color: var(--color-gray);
+            font-size: var(--font-size-sm);
+            margin-bottom: var(--spacing-6);
+        }
+
+        .form-group {
+            text-align: start;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: var(--spacing-5);
+            font-size: var(--font-size-sm);
+            color: var(--color-primary-dark);
+            text-decoration: none;
+            font-weight: var(--font-weight-semibold);
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 
 <body>
     <div class="login-card">
-        <a href="/" class="login-logo">Carrière Bhalil</a>
-        <h2 style="margin-bottom: var(--spacing-6);">Espace Client</h2>
+        <a href="/" class="login-logo">
+            <span class="mark">HH</span>
+            <span class="name">H.H ISTITMAR<small>Carrière Bhalil</small></span>
+        </a>
+
+        <h2>Espace Client</h2>
+        <p class="hint">Suivez vos commandes, factures et livraisons.</p>
 
         <form action="./dashboard.html">
-            <div class="form-group" style="text-align: left;">
-                <label class="form-label">Email</label>
-                <input type="email" class="form-input" required placeholder="client@example.com">
+            <div class="form-group">
+                <label class="form-label" for="login-email">Email</label>
+                <input type="email" id="login-email" class="form-input" required placeholder="client@example.com"
+                    autocomplete="email">
             </div>
 
-            <div class="form-group" style="text-align: left;">
-                <label class="form-label">Mot de passe</label>
-                <input type="password" class="form-input" required placeholder="••••••••">
+            <div class="form-group">
+                <label class="form-label" for="login-password">Mot de passe</label>
+                <input type="password" id="login-password" class="form-input" required placeholder="••••••••"
+                    autocomplete="current-password">
             </div>
 
-            <button type="submit" class="btn btn-primary" style="width: 100%;">Se Connecter</button>
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Se Connecter</button>
         </form>
 
-        <p style="margin-top: var(--spacing-4); font-size: var(--font-size-sm); color: var(--color-gray);">
-            <a href="/" style="color: var(--color-primary);">Retour à l'accueil</a>
-        </p>
+        <a href="/" class="back-link">← Retour à l'accueil</a>
     </div>
 </body>
 

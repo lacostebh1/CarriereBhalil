@@ -1,5 +1,5 @@
 // ============================================
-// Main JavaScript - Carrière Bhalil Website
+// Main JavaScript — SOCIETE H.H ISTITMAR
 // ============================================
 
 import { translations } from './translations.js';
@@ -10,10 +10,15 @@ import { translations } from './translations.js';
 let currentLang = localStorage.getItem('carriere-lang') || 'fr';
 
 // ============================================
-// DOM Elements
+// DOM Helpers
 // ============================================
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => document.querySelectorAll(selector);
+
+const setText = (id, value) => {
+    const el = document.getElementById(id);
+    if (el && value !== undefined) el.textContent = value;
+};
 
 // ============================================
 // Initialize App
@@ -24,6 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
     initAccordion();
     initSmoothScroll();
     initScrollEffects();
+    initScrollSpy();
+    initReveal();
+    initLightbox();
+    initContactForm();
     renderContent();
 });
 
@@ -37,7 +46,6 @@ function initLanguage() {
         langBtn.addEventListener('click', toggleLanguage);
     }
 
-    // Set initial direction
     updateDirection();
 }
 
@@ -77,8 +85,9 @@ function initNavigation() {
 
     if (toggle && menu) {
         toggle.addEventListener('click', () => {
-            menu.classList.toggle('active');
-            toggle.classList.toggle('active');
+            const isOpen = menu.classList.toggle('active');
+            toggle.classList.toggle('active', isOpen);
+            toggle.setAttribute('aria-expanded', String(isOpen));
         });
 
         // Close menu when clicking on a link
@@ -86,6 +95,7 @@ function initNavigation() {
             link.addEventListener('click', () => {
                 menu.classList.remove('active');
                 toggle.classList.remove('active');
+                toggle.setAttribute('aria-expanded', 'false');
             });
         });
     }
@@ -102,10 +112,8 @@ function initAccordion() {
         const item = header.closest('.accordion-item');
         if (!item) return;
 
-        // Toggle current item
         item.classList.toggle('active');
 
-        // Close other items (optional - remove for multi-open)
         const siblings = item.parentElement.querySelectorAll('.accordion-item');
         siblings.forEach(sibling => {
             if (sibling !== item) {
@@ -131,8 +139,8 @@ function initSmoothScroll() {
 
         e.preventDefault();
 
-        const navHeight = document.querySelector('.navbar').offsetHeight;
-        const targetPosition = target.offsetTop - navHeight - 20;
+        const navHeight = $('.navbar')?.offsetHeight || 0;
+        const targetPosition = target.getBoundingClientRect().top + window.scrollY - navHeight - 16;
 
         window.scrollTo({
             top: targetPosition,
@@ -142,17 +150,119 @@ function initSmoothScroll() {
 }
 
 // ============================================
-// Scroll Effects
+// Scroll Effects (navbar)
 // ============================================
 function initScrollEffects() {
     const navbar = $('.navbar');
+    if (!navbar) return;
 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
+    const onScroll = () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 60);
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+}
+
+// ============================================
+// Scroll Spy — active nav link
+// ============================================
+function initScrollSpy() {
+    const sections = ['hero', 'products', 'procedures', 'sectors', 'contact']
+        .map(id => document.getElementById(id))
+        .filter(Boolean);
+
+    if (!sections.length || !('IntersectionObserver' in window)) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            $$('.navbar-link').forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`);
+            });
+        });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+
+    sections.forEach(section => observer.observe(section));
+}
+
+// ============================================
+// Reveal on scroll
+// ============================================
+function initReveal() {
+    const elements = $$('.reveal');
+    if (!elements.length) return;
+
+    if (!('IntersectionObserver' in window)) {
+        elements.forEach(el => el.classList.add('visible'));
+        return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+
+    elements.forEach(el => observer.observe(el));
+}
+
+// ============================================
+// Gallery Lightbox
+// ============================================
+function initLightbox() {
+    const lightbox = $('#lightbox');
+    const lightboxImg = $('#lightbox-img');
+    const closeBtn = $('#lightbox-close');
+    if (!lightbox || !lightboxImg) return;
+
+    const close = () => {
+        lightbox.classList.remove('open');
+        document.body.style.overflow = '';
+    };
+
+    $$('.gallery-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const img = item.querySelector('.gallery-img');
+            if (!img) return;
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightbox.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    closeBtn?.addEventListener('click', close);
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) close();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') close();
+    });
+}
+
+// ============================================
+// Contact form → WhatsApp
+// ============================================
+function initContactForm() {
+    const form = $('#contact-form');
+    if (!form) return;
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = $('#form-name')?.value || '';
+        const email = $('#form-email')?.value || '';
+        const phone = $('#form-phone')?.value || '';
+        const message = $('#form-message')?.value || '';
+
+        const lines = currentLang === 'ar'
+            ? [`الاسم: ${name}`, `البريد: ${email}`, `الهاتف: ${phone}`, '', message]
+            : [`Nom : ${name}`, `Email : ${email}`, `Téléphone : ${phone}`, '', message];
+
+        window.openWhatsApp(lines.join('\n'));
     });
 }
 
@@ -162,6 +272,7 @@ function initScrollEffects() {
 function renderContent() {
     renderNavigation();
     renderHero();
+    renderStats();
     renderProducts();
     renderAdvantages();
     renderSOP();
@@ -173,34 +284,21 @@ function renderContent() {
 }
 
 function renderNavigation() {
-    // Update nav links
-    const navLinks = {
-        'nav-home': t('nav.home'),
-        'nav-products': t('nav.products'),
-        'nav-procedures': t('nav.procedures'),
-        'nav-sectors': t('nav.sectors'),
-        'nav-contact': t('nav.contact')
-    };
-
-    Object.entries(navLinks).forEach(([id, text]) => {
-        const el = $(`#${id}`);
-        if (el) el.textContent = text;
-    });
-
-    // Update language switcher
-    const langSwitcher = $('#lang-text');
-    if (langSwitcher) {
-        langSwitcher.textContent = t('nav.langSwitch');
-    }
+    setText('nav-home', t('nav.home'));
+    setText('nav-products', t('nav.products'));
+    setText('nav-procedures', t('nav.procedures'));
+    setText('nav-sectors', t('nav.sectors'));
+    setText('nav-contact', t('nav.contact'));
+    setText('nav-client-btn', t('nav.clientButton'));
+    setText('lang-text', t('nav.langSwitch'));
 
     const langFlag = $('#lang-flag');
     if (langFlag) {
-        langFlag.textContent = currentLang === 'fr' ? '🇸🇦' : '🇫🇷';
+        langFlag.textContent = currentLang === 'fr' ? '🇲🇦' : '🇫🇷';
     }
 }
 
 function renderHero() {
-    // Tags
     const tagsContainer = $('#hero-tags');
     if (tagsContainer) {
         tagsContainer.innerHTML = `
@@ -210,34 +308,33 @@ function renderHero() {
     `;
     }
 
-    // Title and subtitle
-    const heroTitle = $('#hero-title');
-    if (heroTitle) heroTitle.textContent = t('hero.title');
+    setText('hero-title', t('hero.title'));
+    setText('hero-subtitle', t('hero.subtitle'));
+    setText('hero-cta-primary', t('hero.ctaPrimary'));
+    setText('hero-cta-secondary', t('hero.ctaSecondary'));
+    setText('hero-info-title', t('hero.infoTitle'));
+    setText('hero-info-text', t('hero.infoText'));
+}
 
-    const heroSubtitle = $('#hero-subtitle');
-    if (heroSubtitle) heroSubtitle.textContent = t('hero.subtitle');
+function renderStats() {
+    const grid = $('#stats-grid');
+    if (!grid) return;
 
-    // Buttons
-    const ctaPrimary = $('#hero-cta-primary');
-    if (ctaPrimary) ctaPrimary.textContent = t('hero.ctaPrimary');
+    const items = t('stats.items');
+    if (!Array.isArray(items)) return;
 
-    const ctaSecondary = $('#hero-cta-secondary');
-    if (ctaSecondary) ctaSecondary.textContent = t('hero.ctaSecondary');
-
-    // Info box
-    const infoTitle = $('#hero-info-title');
-    if (infoTitle) infoTitle.textContent = t('hero.infoTitle');
-
-    const infoText = $('#hero-info-text');
-    if (infoText) infoText.textContent = t('hero.infoText');
+    grid.innerHTML = items.map(item => `
+      <div class="stat-item">
+        <div class="stat-number">${item.value}</div>
+        <div class="stat-label">${item.label}</div>
+      </div>
+    `).join('');
 }
 
 function renderProducts() {
-    const title = $('#products-title');
-    if (title) title.textContent = t('products.title');
-
-    const subtitle = $('#products-subtitle');
-    if (subtitle) subtitle.textContent = t('products.subtitle');
+    setText('products-eyebrow', t('products.eyebrow'));
+    setText('products-title', t('products.title'));
+    setText('products-subtitle', t('products.subtitle'));
 
     const grid = $('#products-grid');
     if (grid) {
@@ -261,11 +358,9 @@ function renderProducts() {
 }
 
 function renderAdvantages() {
-    const title = $('#advantages-title');
-    if (title) title.textContent = t('advantages.title');
-
-    const subtitle = $('#advantages-subtitle');
-    if (subtitle) subtitle.textContent = t('advantages.subtitle');
+    setText('advantages-eyebrow', t('advantages.eyebrow'));
+    setText('advantages-title', t('advantages.title'));
+    setText('advantages-subtitle', t('advantages.subtitle'));
 
     const grid = $('#advantages-grid');
     if (grid) {
@@ -283,18 +378,16 @@ function renderAdvantages() {
 }
 
 function renderSOP() {
-    const title = $('#sop-title');
-    if (title) title.textContent = t('sop.title');
-
-    const subtitle = $('#sop-subtitle');
-    if (subtitle) subtitle.textContent = t('sop.subtitle');
+    setText('sop-eyebrow', t('sop.eyebrow'));
+    setText('sop-title', t('sop.title'));
+    setText('sop-subtitle', t('sop.subtitle'));
 
     const accordion = $('#sop-accordion');
     if (accordion) {
         const sections = t('sop.sections');
         accordion.innerHTML = sections.map((section, index) => `
       <div class="accordion-item${index === 0 ? ' active' : ''}">
-        <button class="accordion-header">
+        <button class="accordion-header" aria-expanded="${index === 0}">
           <span>${section.title}</span>
           <span class="accordion-icon">+</span>
         </button>
@@ -311,24 +404,18 @@ function renderSOP() {
 }
 
 function renderSectors() {
-    const title = $('#sectors-title');
-    if (title) title.textContent = t('sectors.title');
-
-    const subtitle = $('#sectors-subtitle');
-    if (subtitle) subtitle.textContent = t('sectors.subtitle');
+    setText('sectors-eyebrow', t('sectors.eyebrow'));
+    setText('sectors-title', t('sectors.title'));
+    setText('sectors-subtitle', t('sectors.subtitle'));
 
     const grid = $('#sectors-grid');
     if (grid) {
         const sectors = t('sectors.items');
         const images = [
-            // البناء والتشييد - Construction & Maçonnerie
-            'https://images.unsplash.com/photo-1541976590-713941681591?w=600',
-            // الطرق والبنية التحتية - Routes & Infrastructures  
-            'https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?w=600',
-            // الأشغال العمومية - Travaux Publics
-            'https://images.unsplash.com/photo-1580901368919-7738efb0f87e?w=600',
-            // التهيئة - Aménagement
-            'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600'
+            new URL('../assets/images/gallery-4.jpg', import.meta.url).href,
+            new URL('../assets/images/gallery-7.jpg', import.meta.url).href,
+            new URL('../assets/images/gallery-3.jpg', import.meta.url).href,
+            new URL('../assets/images/gallery-5.jpg', import.meta.url).href
         ];
 
         grid.innerHTML = sectors.map((sector, index) => `
@@ -343,113 +430,66 @@ function renderSectors() {
 }
 
 function renderGallery() {
-    const title = $('#gallery-title');
-    if (title) title.textContent = t('gallery.title');
+    setText('gallery-eyebrow', t('gallery.eyebrow'));
+    setText('gallery-title', t('gallery.title'));
+    setText('gallery-subtitle', t('gallery.subtitle'));
 
-    const subtitle = $('#gallery-subtitle');
-    if (subtitle) subtitle.textContent = t('gallery.subtitle');
-
-    const caption1 = $('#gallery-caption-1');
-    if (caption1) caption1.textContent = t('gallery.caption1');
-
-    const caption3 = $('#gallery-caption-3');
-    if (caption3) caption3.textContent = t('gallery.caption3');
-
-    const caption4 = $('#gallery-caption-4');
-    if (caption4) caption4.textContent = t('gallery.caption4');
-
-    const caption5 = $('#gallery-caption-5');
-    if (caption5) caption5.textContent = t('gallery.caption5');
-
-    const caption6 = $('#gallery-caption-6');
-    if (caption6) caption6.textContent = t('gallery.caption6');
-
-    const caption7 = $('#gallery-caption-7');
-    if (caption7) caption7.textContent = t('gallery.caption7');
+    ['1', '3', '4', '5', '6', '7'].forEach(n => {
+        setText(`gallery-caption-${n}`, t(`gallery.caption${n}`));
+    });
 }
 
 function renderVideo() {
-    const title = $('#video-title');
-    if (title) title.textContent = t('video.title');
-
-    const subtitle = $('#video-subtitle');
-    if (subtitle) subtitle.textContent = t('video.subtitle');
+    setText('video-eyebrow', t('video.eyebrow'));
+    setText('video-title', t('video.title'));
+    setText('video-subtitle', t('video.subtitle'));
 }
 
 function renderContact() {
-    const title = $('#contact-title');
-    if (title) title.textContent = t('contact.title');
-
-    const subtitle = $('#contact-subtitle');
-    if (subtitle) subtitle.textContent = t('contact.subtitle');
-
-    // Contact methods
-    const phoneLabel = $('#contact-phone-label');
-    if (phoneLabel) phoneLabel.textContent = t('contact.phone');
-
-    const phoneNumber = $('#contact-phone-number');
-    if (phoneNumber) phoneNumber.textContent = t('contact.phoneNumber');
-
-    const emailLabel = $('#contact-email-label');
-    if (emailLabel) emailLabel.textContent = t('contact.email');
-
-    const emailAddress = $('#contact-email-address');
-    if (emailAddress) emailAddress.textContent = t('contact.emailAddress');
-
-    const locationLabel = $('#contact-location-label');
-    if (locationLabel) locationLabel.textContent = t('contact.location');
-
-    const locationAddress = $('#contact-location-address');
-    if (locationAddress) locationAddress.textContent = t('contact.locationAddress');
+    setText('contact-title', t('contact.title'));
+    setText('contact-subtitle', t('contact.subtitle'));
+    setText('contact-email-label', t('contact.email'));
+    setText('contact-email-address', t('contact.emailAddress'));
+    setText('contact-location-label', t('contact.location'));
+    setText('contact-location-address', t('contact.locationAddress'));
+    setText('contact-quarry-label', t('contact.quarryLocation'));
+    setText('contact-quarry-address', t('contact.quarryAddress'));
+    setText('contact-whatsapp-label', t('contact.whatsapp'));
+    setText('contact-whatsapp-text', t('contact.whatsappText'));
+    setText('contact-legal-label', t('contact.legalLabel'));
 
     // Form
-    const formTitle = $('#contact-form-title');
-    if (formTitle) formTitle.textContent = t('contact.formTitle');
-
-    const formNameLabel = $('#form-name-label');
-    if (formNameLabel) formNameLabel.textContent = t('contact.formName');
-
-    const formEmailLabel = $('#form-email-label');
-    if (formEmailLabel) formEmailLabel.textContent = t('contact.formEmail');
-
-    const formPhoneLabel = $('#form-phone-label');
-    if (formPhoneLabel) formPhoneLabel.textContent = t('contact.formPhone');
-
-    const formMessageLabel = $('#form-message-label');
-    if (formMessageLabel) formMessageLabel.textContent = t('contact.formMessage');
-
-    const formSubmit = $('#form-submit');
-    if (formSubmit) formSubmit.textContent = t('contact.formSubmit');
+    setText('contact-form-title', t('contact.formTitle'));
+    setText('form-name-label', t('contact.formName'));
+    setText('form-email-label', t('contact.formEmail'));
+    setText('form-phone-label', t('contact.formPhone'));
+    setText('form-message-label', t('contact.formMessage'));
+    setText('form-submit', t('contact.formSubmit'));
 }
 
 function renderFooter() {
-    const description = $('#footer-description');
-    if (description) description.textContent = t('footer.description');
-
-    const quickLinksTitle = $('#footer-quick-links-title');
-    if (quickLinksTitle) quickLinksTitle.textContent = t('footer.quickLinks');
-
-    const footerProducts = $('#footer-products');
-    if (footerProducts) footerProducts.textContent = t('footer.products');
-
-    const footerProcedures = $('#footer-procedures');
-    if (footerProcedures) footerProcedures.textContent = t('footer.procedures');
-
-    const footerContact = $('#footer-contact');
-    if (footerContact) footerContact.textContent = t('footer.contact');
-
-    const copyright = $('#footer-copyright');
-    if (copyright) copyright.textContent = t('footer.copyright');
-
-    const madeWith = $('#footer-made-with');
-    if (madeWith) madeWith.textContent = t('footer.madeWith');
+    setText('footer-description', t('footer.description'));
+    setText('footer-quick-links-title', t('footer.quickLinks'));
+    setText('footer-products', t('footer.products'));
+    setText('footer-procedures', t('footer.procedures'));
+    setText('footer-gallery', t('footer.gallery'));
+    setText('footer-contact', t('footer.contact'));
+    setText('footer-contact-title', t('footer.contactTitle'));
+    setText('footer-legal-title', t('footer.legalTitle'));
+    setText('footer-client-portal', t('footer.clientPortal'));
+    setText('footer-admin-portal', t('footer.adminPortal'));
+    setText('footer-copyright', t('footer.copyright'));
+    setText('footer-made-with', t('footer.madeWith'));
 }
 
 // ============================================
 // WhatsApp Helper
 // ============================================
 window.openWhatsApp = function (message = '') {
-    const phoneNumber = '212661350968'; // Carrière Bhalil WhatsApp
-    const encodedMessage = encodeURIComponent(message || 'Bonjour, je souhaite obtenir un devis pour des granulats.');
+    const phoneNumber = '212661350968'; // WhatsApp SOCIETE H.H ISTITMAR
+    const fallback = currentLang === 'ar'
+        ? 'السلام عليكم، أود الحصول على عرض سعر للحصى.'
+        : 'Bonjour, je souhaite obtenir un devis pour des granulats.';
+    const encodedMessage = encodeURIComponent(message || fallback);
     window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
 };

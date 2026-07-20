@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administration RH - Carrière Bhalil</title>
+    <title>Administration RH - SOCIETE H.H ISTITMAR</title>
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231B2430'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='26' font-weight='800' fill='white' text-anchor='middle'%3EHH%3C/text%3E%3C/svg%3E">
     <link rel="stylesheet" href="/src/css/variables.css">
     <link rel="stylesheet" href="/src/css/base.css">
     <link rel="stylesheet" href="/src/css/dashboard.css">
@@ -13,7 +15,10 @@
 <body>
     <!-- Sidebar -->
     <aside class="sidebar">
-        <a href="/" class="sidebar-brand">CB Admin</a>
+        <a href="/" class="sidebar-brand">
+            <span class="logo-mark">HH</span>
+            <span>Admin RH</span>
+        </a>
         <nav class="sidebar-menu">
             <a href="#" class="nav-item active">
                 <span>🏢</span> <span data-i18n="admin.dashboard">Vue d'ensemble</span>
@@ -40,10 +45,10 @@
         <header class="top-header">
             <h2 data-i18n="admin.portalTitle">Portail Administratif & RH</h2>
             <div class="header-user">
-                <button id="lang-switcher" class="btn btn-primary" style="padding: 5px 15px;">
+                <button id="lang-switcher" class="btn btn-ghost">
                     <span id="lang-text">العربية</span>
                 </button>
-                <div class="user-avatar" style="background-color: var(--color-dark);">AD</div>
+                <div class="user-avatar">AD</div>
             </div>
         </header>
 
@@ -53,21 +58,21 @@
             <!-- Stats Grid -->
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-icon" style="color: var(--color-primary);">👥</div>
+                    <div class="stat-icon">👥</div>
                     <div class="stat-info">
                         <h3 data-i18n="admin.totalEmployees">Effectif Total</h3>
                         <div class="value">45</div>
                     </div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-icon" style="color: #D97706;">⚠️</div>
+                    <div class="stat-icon">⚠️</div>
                     <div class="stat-info">
                         <h3 data-i18n="admin.expiringContracts">Contrats à échéance</h3>
                         <div class="value">3 (CDD)</div>
                     </div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-icon" style="color: #059669;">✅</div>
+                    <div class="stat-icon">✅</div>
                     <div class="stat-info">
                         <h3 data-i18n="admin.declarationsStatus">Déclaration CNSS</h3>
                         <div class="value">Janvier OK</div>
@@ -76,8 +81,8 @@
             </div>
 
             <!-- Employee Table -->
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-                <h2 class="page-title" style="font-size: 1.25rem; margin-bottom: 0;">Liste des Employés</h2>
+            <div class="section-heading">
+                <h2>Liste des Employés</h2>
                 <button class="btn btn-primary">+ Nouvel Employé</button>
             </div>
 

@@ -9,6 +9,7 @@
   <meta name="keywords"
     content="H.H ISTITMAR, carrière, bhalil, granulats, calcaire, dolomitique, maroc, fès, sefrou, béton, construction, GNT, gravier, sable">
   <meta name="author" content="SOCIETE H.H ISTITMAR">
+  <meta name="theme-color" content="#131920">
 
   <!-- Open Graph -->
   <meta property="og:title" content="SOCIETE H.H ISTITMAR - Carrière Bhalil | Granulats de Qualité au Maroc">
@@ -17,72 +18,42 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_MA">
   <meta property="og:locale:alternate" content="ar_MA">
+  <meta property="og:image" content="/src/assets/images/gallery-1.jpg">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏔️</text></svg>">
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23C77E24'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='26' font-weight='800' fill='white' text-anchor='middle'%3EHH%3C/text%3E%3C/svg%3E">
+
+  <link rel="preload" as="image" href="/src/assets/images/gallery-1.jpg">
 
   <link rel="stylesheet" href="/src/css/variables.css">
   <link rel="stylesheet" href="/src/css/base.css">
   <link rel="stylesheet" href="/src/css/components.css">
   <link rel="stylesheet" href="/src/css/sections.css">
-  <link rel="stylesheet" href="/src/css/responsive.css">
-  <link rel="stylesheet" href="/src/css/animation-3d.css">
   <link rel="stylesheet" href="/src/css/gallery.css">
+  <link rel="stylesheet" href="/src/css/animation-3d.css">
+  <link rel="stylesheet" href="/src/css/responsive.css">
 
   <title>SOCIETE H.H ISTITMAR - Carrière Bhalil | محجر بهليل</title>
 </head>
 
 <body>
-  <!-- ============================================
-       3D Animated Background
-       ============================================ -->
-  <div class="scene-3d" id="scene-3d">
-    <!-- Floating Rocks -->
-    <div class="rock rock-1"></div>
-    <div class="rock rock-2"></div>
-    <div class="rock rock-3"></div>
-    <div class="rock rock-4"></div>
-    <div class="rock rock-5"></div>
-    <div class="rock rock-6"></div>
-    <div class="rock rock-7"></div>
-    <div class="rock rock-8"></div>
-
-    <!-- Dust Particles -->
-    <div class="dust dust-1"></div>
-    <div class="dust dust-2"></div>
-    <div class="dust dust-3"></div>
-    <div class="dust dust-4"></div>
-    <div class="dust dust-5"></div>
-    <div class="dust dust-6"></div>
-    <div class="dust dust-7"></div>
-    <div class="dust dust-8"></div>
-    <div class="dust dust-9"></div>
-    <div class="dust dust-10"></div>
-    <div class="dust dust-11"></div>
-    <div class="dust dust-12"></div>
-
-    <!-- Geometric Lines -->
-    <div class="geo-line geo-line-1"></div>
-    <div class="geo-line geo-line-2"></div>
-    <div class="geo-line geo-line-3"></div>
-    <div class="geo-line geo-line-4"></div>
-
-    <!-- Overlay -->
-    <div class="scene-overlay"></div>
-  </div>
+  <a href="#hero" class="skip-link">Aller au contenu</a>
 
   <!-- ============================================
        Navigation
        ============================================ -->
   <nav class="navbar" id="navbar">
     <div class="navbar-container">
-      <a href="#" class="navbar-brand">
+      <a href="#hero" class="navbar-brand">
         <div class="navbar-logo">HH</div>
-        <span class="navbar-title">H.H <span>ISTITMAR</span></span>
+        <span class="navbar-title">
+          H.H <span>ISTITMAR</span>
+          <span class="navbar-subtitle">Carrière Bhalil</span>
+        </span>
       </a>
 
-      <button class="navbar-toggle" id="navbar-toggle" aria-label="Menu">
+      <button class="navbar-toggle" id="navbar-toggle" aria-label="Menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
@@ -98,12 +69,9 @@
         </ul>
 
         <div class="navbar-actions">
-          <a href="/src/pages/client/login.html" class="btn btn-primary"
-            style="padding: 8px 16px; font-size: 0.9rem; text-decoration: none;" id="nav-client-btn">
-            Espace Client
-          </a>
-          <button class="lang-switcher" id="lang-switcher">
-            <span class="lang-flag" id="lang-flag">🇸🇦</span>
+          <a href="/src/pages/client/login.html" class="btn btn-primary" id="nav-client-btn">Espace Client</a>
+          <button class="lang-switcher" id="lang-switcher" aria-label="Changer de langue">
+            <span class="lang-flag" id="lang-flag">🇲🇦</span>
             <span id="lang-text">العربية</span>
           </button>
         </div>
@@ -112,12 +80,12 @@
   </nav>
 
   <!-- ============================================
-       Hero Section
+       Hero
        ============================================ -->
   <section class="hero" id="hero">
     <div class="hero-bg">
-      <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1920" alt="Carrière de calcaire"
-        loading="eager">
+      <img src="/src/assets/images/gallery-1.jpg" alt="Carrière de calcaire dolomitique de Bhalil au coucher du soleil"
+        loading="eager" fetchpriority="high">
     </div>
     <div class="hero-overlay"></div>
 
@@ -138,8 +106,7 @@
 
         <div class="hero-buttons">
           <a href="#products" class="btn btn-primary btn-lg" id="hero-cta-primary">Voir nos Produits</a>
-          <a href="#contact" class="btn btn-secondary btn-lg" id="hero-cta-secondary"
-            style="background: transparent; border-color: white; color: white;">Nous Contacter</a>
+          <a href="#contact" class="btn btn-outline btn-lg" id="hero-cta-secondary">Nous Contacter</a>
         </div>
       </div>
 
@@ -151,92 +118,109 @@
         </p>
       </div>
     </div>
+
+    <a href="#stats" class="hero-scroll" aria-label="Défiler vers le bas">▾</a>
   </section>
 
   <!-- ============================================
-       Products Section
+       Stats
+       ============================================ -->
+  <section class="stats-bar" id="stats">
+    <div class="container">
+      <div class="stats-bar-grid" id="stats-grid">
+        <!-- Stats rendered by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       Products
        ============================================ -->
   <section class="section" id="products">
     <div class="container">
-      <div class="section-title">
+      <div class="section-title reveal">
+        <span class="eyebrow" id="products-eyebrow">Granulats</span>
         <h2 id="products-title">Nos Produits</h2>
         <p id="products-subtitle">Granulats de qualité supérieure pour tous vos projets de construction et
           d'infrastructure.</p>
       </div>
 
       <div class="products-grid" id="products-grid">
-        <!-- Products will be rendered by JavaScript -->
+        <!-- Products rendered by JavaScript -->
       </div>
     </div>
   </section>
 
   <!-- ============================================
-       Advantages Section
+       Advantages
        ============================================ -->
   <section class="section section-alt" id="advantages">
     <div class="container">
-      <div class="section-title">
+      <div class="section-title reveal">
+        <span class="eyebrow" id="advantages-eyebrow">Nos atouts</span>
         <h2 id="advantages-title">Avantages du Calcaire Dolomitique de Bhalil</h2>
         <p id="advantages-subtitle">Des matériaux de qualité supérieure pour vos projets les plus exigeants.</p>
       </div>
 
       <div class="advantages-grid" id="advantages-grid">
-        <!-- Advantages will be rendered by JavaScript -->
+        <!-- Advantages rendered by JavaScript -->
       </div>
     </div>
   </section>
 
   <!-- ============================================
-       SOP / Procedures Section
+       SOP / Procedures
        ============================================ -->
   <section class="section sop-section" id="procedures">
     <div class="container">
-      <div class="section-title">
+      <div class="section-title reveal">
+        <span class="eyebrow" id="sop-eyebrow">Conformité</span>
         <h2 id="sop-title">Procédures Opérationnelles</h2>
         <p id="sop-subtitle">Notre engagement envers une extraction durable, sécurisée et conforme aux normes
           marocaines.</p>
       </div>
 
-      <div class="sop-accordion accordion" id="sop-accordion">
-        <!-- SOP accordion will be rendered by JavaScript -->
+      <div class="sop-accordion accordion reveal" id="sop-accordion">
+        <!-- SOP accordion rendered by JavaScript -->
       </div>
     </div>
   </section>
 
   <!-- ============================================
-       Sectors Section
+       Sectors
        ============================================ -->
   <section class="section" id="sectors">
     <div class="container">
-      <div class="section-title">
+      <div class="section-title reveal">
+        <span class="eyebrow" id="sectors-eyebrow">Applications</span>
         <h2 id="sectors-title">Nos Secteurs d'Activité</h2>
         <p id="sectors-subtitle">Des solutions adaptées à tous les besoins du secteur de la construction.</p>
       </div>
 
       <div class="sectors-grid" id="sectors-grid">
-        <!-- Sectors will be rendered by JavaScript -->
+        <!-- Sectors rendered by JavaScript -->
       </div>
     </div>
   </section>
 
   <!-- ============================================
-       Gallery Section
+       Gallery
        ============================================ -->
   <section class="section section-alt" id="gallery">
     <div class="container">
-      <div class="section-title">
+      <div class="section-title reveal">
+        <span class="eyebrow" id="gallery-eyebrow">Sur le terrain</span>
         <h2 id="gallery-title">Notre Carrière en Images</h2>
         <p id="gallery-subtitle">Découvrez nos installations et notre environnement de travail.</p>
       </div>
 
-      <div class="gallery-grid">
+      <div class="gallery-grid reveal">
         <div class="gallery-item">
           <img src="/src/assets/images/gallery-1.jpg" alt="Vue de la carrière" class="gallery-img" loading="lazy">
           <div class="gallery-overlay">
             <span class="gallery-caption" id="gallery-caption-1">Vue Panoramique</span>
           </div>
         </div>
-
         <div class="gallery-item">
           <img src="/src/assets/images/gallery-3.jpg" alt="Zone d'extraction" class="gallery-img" loading="lazy">
           <div class="gallery-overlay">
@@ -244,25 +228,25 @@
           </div>
         </div>
         <div class="gallery-item">
-          <img src="/src/assets/images/gallery-4.jpg" alt="Nouvelle image" class="gallery-img" loading="lazy">
+          <img src="/src/assets/images/gallery-4.jpg" alt="Opérations sur site" class="gallery-img" loading="lazy">
           <div class="gallery-overlay">
             <span class="gallery-caption" id="gallery-caption-4">Opérations sur Site</span>
           </div>
         </div>
         <div class="gallery-item">
-          <img src="/src/assets/images/gallery-5.jpg" alt="Vue détaillée" class="gallery-img" loading="lazy">
+          <img src="/src/assets/images/gallery-5.jpg" alt="Détail du matériau" class="gallery-img" loading="lazy">
           <div class="gallery-overlay">
             <span class="gallery-caption" id="gallery-caption-5">Détail du Matériau</span>
           </div>
         </div>
         <div class="gallery-item">
-          <img src="/src/assets/images/gallery-6.jpg" alt="Vue globale" class="gallery-img" loading="lazy">
+          <img src="/src/assets/images/gallery-6.jpg" alt="Vue d'ensemble" class="gallery-img" loading="lazy">
           <div class="gallery-overlay">
             <span class="gallery-caption" id="gallery-caption-6">Vue d'Ensemble</span>
           </div>
         </div>
         <div class="gallery-item">
-          <img src="/src/assets/images/gallery-7.jpg" alt="Activité" class="gallery-img" loading="lazy">
+          <img src="/src/assets/images/gallery-7.jpg" alt="Activité d'extraction" class="gallery-img" loading="lazy">
           <div class="gallery-overlay">
             <span class="gallery-caption" id="gallery-caption-7">Activité d'Extraction</span>
           </div>
@@ -271,65 +255,71 @@
     </div>
   </section>
 
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image agrandie">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Fermer">✕</button>
+    <img src="" alt="" id="lightbox-img">
+  </div>
+
   <!-- ============================================
-       Video Section
+       Video
        ============================================ -->
   <section class="section" id="video">
     <div class="container">
-      <div class="section-title">
+      <div class="section-title reveal">
+        <span class="eyebrow" id="video-eyebrow">Vidéo</span>
         <h2 id="video-title">Immersion au Cœur de la Carrière</h2>
         <p id="video-subtitle">Découvrez notre processus d'extraction et nos installations en vidéo.</p>
       </div>
 
-      <div class="video-container">
+      <div class="video-container reveal">
         <video class="video-player" controls preload="metadata" poster="/src/assets/images/gallery-1.jpg">
           <source src="/src/assets/videos/presentation.mp4" type="video/mp4">
           Votre navigateur ne supporte pas la lecture de vidéos.
         </video>
-        <div class="video-overlay-decoration"></div>
       </div>
     </div>
   </section>
 
   <!-- ============================================
-       Contact Section
+       Contact
        ============================================ -->
   <section class="section contact-section" id="contact">
     <div class="container">
       <div class="contact-grid">
-        <div class="contact-info">
+        <div class="contact-info reveal">
           <h2 id="contact-title">Contactez-nous</h2>
           <p id="contact-subtitle">Besoin d'un devis ou d'informations ? Notre équipe est à votre disposition.</p>
 
           <div class="contact-methods">
-            <div class="contact-method">
+            <a class="contact-method" href="tel:+212661350968">
               <div class="contact-method-icon">📞</div>
               <div>
-                <strong>Abdellah Hammoune</strong><br>
-                <a href="tel:+212661350968" style="color: inherit; text-decoration: none;">+212 661 350 968</a>
+                <strong>Abdellah Hammoune</strong>
+                <span dir="ltr">+212 661 350 968</span>
               </div>
-            </div>
+            </a>
 
-            <div class="contact-method">
+            <a class="contact-method" href="tel:+212661229850">
               <div class="contact-method-icon">📞</div>
               <div>
-                <strong>Abdkadre Hagari</strong><br>
-                <a href="tel:+212661229850" style="color: inherit; text-decoration: none;">+212 661 229 850</a>
+                <strong>Abdkadre Hagari</strong>
+                <span dir="ltr">+212 661 229 850</span>
               </div>
-            </div>
+            </a>
 
-            <div class="contact-method">
+            <a class="contact-method" href="mailto:contact@hh-istitmar.ma">
               <div class="contact-method-icon">📧</div>
               <div>
-                <strong id="contact-email-label">Email</strong><br>
+                <strong id="contact-email-label">Email</strong>
                 <span id="contact-email-address">contact@hh-istitmar.ma</span>
               </div>
-            </div>
+            </a>
 
             <div class="contact-method">
               <div class="contact-method-icon">🏢</div>
               <div>
-                <strong id="contact-location-label">Siège Social</strong><br>
+                <strong id="contact-location-label">Siège Social</strong>
                 <span id="contact-location-address">AV Hassan 2, Hay M'sila, Bhalil, Sefrou, Maroc</span>
               </div>
             </div>
@@ -337,46 +327,43 @@
             <div class="contact-method">
               <div class="contact-method-icon">📍</div>
               <div>
-                <strong id="contact-quarry-label">Localisation Carrière</strong><br>
+                <strong id="contact-quarry-label">Localisation Carrière</strong>
                 <span id="contact-quarry-address">À proximité de Aghbalou Aqorar, Bhalil</span>
               </div>
             </div>
 
-            <div class="contact-method" style="cursor: pointer;" onclick="openWhatsApp()">
-              <div class="contact-method-icon" style="background-color: #25D366;">💬</div>
+            <a class="contact-method" href="#" onclick="openWhatsApp(); return false;">
+              <div class="contact-method-icon whatsapp">💬</div>
               <div>
-                <strong id="contact-whatsapp-label">WhatsApp</strong><br>
-                <span style="text-decoration: underline;">Cliquez pour discuter</span>
+                <strong id="contact-whatsapp-label">WhatsApp</strong>
+                <span id="contact-whatsapp-text">Cliquez pour discuter</span>
               </div>
-            </div>
+            </a>
           </div>
 
-          <!-- Informations Légales -->
-          <div class="legal-info"
-            style="margin-top: 1.5rem; padding: 1rem; background: rgba(0,0,0,0.05); border-radius: 8px; font-size: 0.9rem;">
-            <strong>Informations Légales:</strong><br>
-            <span>RC: 2227 Sefrou | ICE: 001987690000045 | Capital: 1 000 000 DHS</span>
+          <div class="legal-info">
+            <strong id="contact-legal-label">Informations Légales :</strong><br>
+            <span>RC : 2227 Sefrou &nbsp;|&nbsp; ICE : 001987690000045 &nbsp;|&nbsp; Capital : 1 000 000 DHS</span>
           </div>
         </div>
 
-        <div class="contact-form-card">
+        <div class="contact-form-card reveal reveal-delay-1">
           <h3 id="contact-form-title">Demande de Devis</h3>
 
-          <form id="contact-form"
-            onsubmit="event.preventDefault(); openWhatsApp(document.getElementById('form-message').value);">
+          <form id="contact-form">
             <div class="form-group">
               <label class="form-label" for="form-name" id="form-name-label">Nom complet</label>
-              <input type="text" class="form-input" id="form-name" required>
+              <input type="text" class="form-input" id="form-name" autocomplete="name" required>
             </div>
 
             <div class="form-group">
               <label class="form-label" for="form-email" id="form-email-label">Email</label>
-              <input type="email" class="form-input" id="form-email" required>
+              <input type="email" class="form-input" id="form-email" autocomplete="email" required>
             </div>
 
             <div class="form-group">
               <label class="form-label" for="form-phone" id="form-phone-label">Téléphone</label>
-              <input type="tel" class="form-input" id="form-phone" required>
+              <input type="tel" class="form-input" id="form-phone" autocomplete="tel" required>
             </div>
 
             <div class="form-group">
@@ -384,17 +371,15 @@
               <textarea class="form-textarea" id="form-message" required></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;" id="form-submit">
+            <button type="submit" class="btn btn-primary btn-lg btn-block" id="form-submit">
               Envoyer la Demande
             </button>
           </form>
 
-          <!-- Google Maps Embed -->
-          <div class="map-container"
-            style="margin-top: 1.5rem; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-            <iframe
+          <div class="map-container">
+            <iframe title="Localisation de la carrière Bhalil"
               src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3283.8!2d-4.8884168!3d33.8396432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzPCsDUwJzIyLjciTiA0wrA1MycxOC4zIlc!5e1!3m2!1sfr!2sma!4v1707168000000!5m2!1sfr!2sma"
-              width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+              width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy"
               referrerpolicy="no-referrer-when-downgrade">
             </iframe>
           </div>
@@ -410,17 +395,27 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="#" class="navbar-brand">
+          <a href="#hero" class="navbar-brand">
             <div class="navbar-logo">HH</div>
-            <span class="navbar-title" style="color: white;">H.H <span>ISTITMAR</span></span>
+            <span class="navbar-title">
+              H.H <span>ISTITMAR</span>
+              <span class="navbar-subtitle">Carrière Bhalil</span>
+            </span>
           </a>
           <p id="footer-description">SOCIETE H.H ISTITMAR - Votre partenaire de confiance pour les granulats de qualité
-            au
-            Maroc. Exploitant de carrière à Bhalil, Sefrou.</p>
+            au Maroc. Exploitant de carrière à Bhalil, Sefrou.</p>
 
           <div class="footer-social">
-            <a href="#" class="social-icon" aria-label="Facebook">f</a>
-            <a href="#" class="social-icon" onclick="openWhatsApp(); return false;" aria-label="WhatsApp">💬</a>
+            <a href="#" class="social-icon" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.2-1.5 1.5-1.5h1.4V4.9c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.5v3h2.7v7h3.3z" />
+              </svg>
+            </a>
+            <a href="#" class="social-icon" onclick="openWhatsApp(); return false;" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.4-3c-.3-.4 0-.5.1-.7l.4-.5c.1-.2.1-.3 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2l-.4-.2z" />
+              </svg>
+            </a>
           </div>
         </div>
 
@@ -429,38 +424,37 @@
           <div class="footer-links">
             <a href="#products" class="footer-link" id="footer-products">Produits</a>
             <a href="#procedures" class="footer-link" id="footer-procedures">Procédures</a>
+            <a href="#gallery" class="footer-link" id="footer-gallery">Galerie</a>
             <a href="#contact" class="footer-link" id="footer-contact">Contact</a>
           </div>
         </div>
 
         <div>
-          <h4 class="footer-title">Contact</h4>
+          <h4 class="footer-title" id="footer-contact-title">Contact</h4>
           <div class="footer-links">
-            <span class="footer-link">🏢 AV Hassan 2, Hay M'sila, Bhalil</span>
-            <span class="footer-link">📍 Carrière: Aghbalou Aqorar, Bhalil</span>
-            <span class="footer-link">📞 A. Hammoune: +212 661 350 968</span>
-            <span class="footer-link">📞 A. Hagari: +212 661 229 850</span>
-            <span class="footer-link">📧 contact@hh-istitmar.ma</span>
+            <span class="footer-link">AV Hassan 2, Hay M'sila, Bhalil</span>
+            <span class="footer-link">Carrière : Aghbalou Aqorar, Bhalil</span>
+            <span class="footer-link" dir="ltr">A. Hammoune : +212 661 350 968</span>
+            <span class="footer-link" dir="ltr">A. Hagari : +212 661 229 850</span>
+            <span class="footer-link">contact@hh-istitmar.ma</span>
           </div>
         </div>
 
         <div>
-          <h4 class="footer-title">Informations Légales</h4>
+          <h4 class="footer-title" id="footer-legal-title">Informations Légales</h4>
           <div class="footer-links">
-            <span class="footer-link">📋 RC: 2227 Sefrou</span>
-            <span class="footer-link">🔢 ICE: 001987690000045</span>
-            <span class="footer-link">✅ Normes NM | EIE | HSE</span>
+            <span class="footer-link">RC : 2227 Sefrou</span>
+            <span class="footer-link">ICE : 001987690000045</span>
+            <span class="footer-link">Capital : 1 000 000 DHS</span>
+            <span class="footer-link">Normes NM | EIE | HSE</span>
           </div>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <div style="margin-bottom: 10px;">
-          <a href="/src/pages/client/login.html"
-            style="color: rgba(255,255,255,0.6); margin-right: 15px; text-decoration: none; font-size: 0.85rem;">Espace
-            Client</a>
-          <a href="/src/pages/admin/login.html"
-            style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem;">Accès Admin</a>
+        <div class="footer-portals">
+          <a href="/src/pages/client/login.html" id="footer-client-portal">Espace Client</a>
+          <a href="/src/pages/admin/login.html" id="footer-admin-portal">Accès Admin</a>
         </div>
         <span class="footer-copyright" id="footer-copyright">© 2026 SOCIETE H.H ISTITMAR. Tous droits réservés.</span>
         <span class="footer-copyright" id="footer-made-with">Qualité & Durabilité 🇲🇦</span>
@@ -472,8 +466,10 @@
        WhatsApp Floating Button
        ============================================ -->
   <div class="whatsapp-float">
-    <button class="btn btn-whatsapp" onclick="openWhatsApp()" aria-label="WhatsApp">
-      💬
+    <button class="btn-whatsapp" onclick="openWhatsApp()" aria-label="Discuter sur WhatsApp">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.4-3c-.3-.4 0-.5.1-.7l.4-.5c.1-.2.1-.3 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2l-.4-.2z" />
+      </svg>
     </button>
   </div>
 
