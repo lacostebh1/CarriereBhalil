@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tableau de Bord - Client</title>
+    <title>Tableau de Bord - Espace Client</title>
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23C77E24'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='26' font-weight='800' fill='white' text-anchor='middle'%3EHH%3C/text%3E%3C/svg%3E">
     <link rel="stylesheet" href="/src/css/variables.css">
     <link rel="stylesheet" href="/src/css/base.css">
     <link rel="stylesheet" href="/src/css/dashboard.css">
@@ -13,7 +15,10 @@
 <body>
     <!-- Sidebar -->
     <aside class="sidebar">
-        <a href="/" class="sidebar-brand">Carrière Bhalil</a>
+        <a href="/" class="sidebar-brand">
+            <span class="logo-mark">HH</span>
+            <span>Carrière Bhalil</span>
+        </a>
         <nav class="sidebar-menu">
             <a href="#" class="nav-item active">
                 <span>📊</span> <span data-i18n="client.dashboard">Tableau de Bord</span>
@@ -40,7 +45,7 @@
         <header class="top-header">
             <h2 data-i18n="client.welcome">Bienvenue, Transport Alaoui</h2>
             <div class="header-user">
-                <button id="lang-switcher" class="btn btn-primary" style="padding: 5px 15px;">
+                <button id="lang-switcher" class="btn btn-ghost">
                     <span id="lang-text">العربية</span>
                 </button>
                 <div class="user-avatar">TA</div>
@@ -76,7 +81,9 @@
             </div>
 
             <!-- Recent Orders Table -->
-            <h2 class="page-title" style="font-size: 1.25rem;">Commandes Récentes</h2>
+            <div class="section-heading">
+                <h2>Commandes Récentes</h2>
+            </div>
             <div class="table-container">
                 <table class="data-table">
                     <thead>

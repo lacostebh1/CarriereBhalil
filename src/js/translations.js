@@ -12,7 +12,8 @@ export const translations = {
             sectors: "Secteurs",
             contact: "Contact",
             langSwitch: "العربية",
-            clientButton: "Espace Client"
+            clientButton: "Espace Client",
+            logout: "Déconnexion"
         },
 
         // Hero Section
@@ -28,8 +29,19 @@ export const translations = {
             infoText: "Zone connue pour ses formations calcaires du Moyen Atlas. Proximité de Fès, Sefrou et Imouzzer avec une forte demande en granulats de qualité."
         },
 
+        // Stats Section
+        stats: {
+            items: [
+                { value: "4", label: "Gammes de granulats" },
+                { value: "6", label: "Granulométries disponibles" },
+                { value: "100%", label: "Conforme aux normes NM" },
+                { value: "1M", label: "DHS de capital social" }
+            ]
+        },
+
         // Products Section
         products: {
+            eyebrow: "Granulats",
             title: "Nos Produits",
             subtitle: "Granulats de qualité supérieure pour tous vos projets de construction et d'infrastructure.",
             inquiry: "Demander un Devis",
@@ -63,6 +75,7 @@ export const translations = {
 
         // Advantages Section
         advantages: {
+            eyebrow: "Nos atouts",
             title: "Avantages du Calcaire Dolomitique de Bhalil",
             subtitle: "Des matériaux de qualité supérieure pour vos projets les plus exigeants.",
             items: [
@@ -91,6 +104,7 @@ export const translations = {
 
         // SOP Section
         sop: {
+            eyebrow: "Conformité",
             title: "Procédures Opérationnelles",
             subtitle: "Notre engagement envers une extraction durable, sécurisée et conforme aux normes marocaines.",
             sections: [
@@ -161,6 +175,7 @@ export const translations = {
 
         // Sectors Section
         sectors: {
+            eyebrow: "Applications",
             title: "Nos Secteurs d'Activité",
             subtitle: "Des solutions adaptées à tous les besoins du secteur de la construction.",
             items: [
@@ -173,6 +188,7 @@ export const translations = {
 
         // Gallery Section
         gallery: {
+            eyebrow: "Sur le terrain",
             title: "Notre Carrière en Images",
             subtitle: "Découvrez nos installations et notre environnement de travail.",
             caption1: "Vue Panoramique",
@@ -185,6 +201,7 @@ export const translations = {
 
         // Video Section
         video: {
+            eyebrow: "Vidéo",
             title: "Immersion au Cœur de la Carrière",
             subtitle: "Découvrez notre processus d'extraction et nos installations en vidéo."
         },
@@ -202,6 +219,8 @@ export const translations = {
             quarryLocation: "Localisation Carrière",
             quarryAddress: "À proximité de Aghbalou Aqorar, Bhalil",
             whatsapp: "WhatsApp",
+            whatsappText: "Cliquez pour discuter",
+            legalLabel: "Informations Légales :",
             formTitle: "Demande de Devis",
             formName: "Nom complet",
             formEmail: "Email",
@@ -240,8 +259,13 @@ export const translations = {
             quickLinks: "Liens Rapides",
             products: "Produits",
             procedures: "Procédures",
+            gallery: "Galerie",
             contact: "Contact",
+            contactTitle: "Contact",
+            legalTitle: "Informations Légales",
             legal: "Mentions Légales",
+            clientPortal: "Espace Client",
+            adminPortal: "Accès Admin",
             copyright: "© 2026 SOCIETE H.H ISTITMAR. Tous droits réservés.",
             madeWith: "Qualité & Durabilité 🇲🇦"
         }
@@ -256,7 +280,8 @@ export const translations = {
             sectors: "القطاعات",
             contact: "اتصل بنا",
             langSwitch: "Français",
-            clientButton: "فضاء الزبناء"
+            clientButton: "فضاء الزبناء",
+            logout: "تسجيل الخروج"
         },
 
         // Hero Section
@@ -272,8 +297,19 @@ export const translations = {
             infoText: "منطقة غنية بالتكوينات الجيرية للأطلس المتوسط. قربها من فاس وصفرو وإموزار يزيد الطلب على المواد."
         },
 
+        // Stats Section
+        stats: {
+            items: [
+                { value: "4", label: "أنواع من الحصى" },
+                { value: "6", label: "أحجام متوفرة" },
+                { value: "100%", label: "مطابق للمعايير المغربية" },
+                { value: "1M", label: "درهم رأس المال" }
+            ]
+        },
+
         // Products Section
         products: {
+            eyebrow: "الحصى",
             title: "منتجاتنا",
             subtitle: "حصى عالية الجودة لجميع مشاريع البناء والبنية التحتية.",
             inquiry: "طلب عرض سعر",
@@ -307,6 +343,7 @@ export const translations = {
 
         // Advantages Section
         advantages: {
+            eyebrow: "مزايانا",
             title: "مميزات الحجر الجيري الدولوميتي من بهليل",
             subtitle: "مواد عالية الجودة لمشاريعكم الأكثر تطلباً.",
             items: [
@@ -335,6 +372,7 @@ export const translations = {
 
         // SOP Section
         sop: {
+            eyebrow: "الامتثال",
             title: "الإجراءات التشغيلية",
             subtitle: "التزامنا بالاستخراج المستدام والآمن وفقاً للمعايير المغربية.",
             sections: [
@@ -405,6 +443,7 @@ export const translations = {
 
         // Sectors Section
         sectors: {
+            eyebrow: "التطبيقات",
             title: "قطاعات نشاطنا",
             subtitle: "حلول مناسبة لجميع احتياجات قطاع البناء.",
             items: [
@@ -417,6 +456,7 @@ export const translations = {
 
         // Gallery Section
         gallery: {
+            eyebrow: "في الميدان",
             title: "صور المحجر",
             subtitle: "اكتشف منشآتنا وبيئة العمل.",
             caption1: "نظرة عامة",
@@ -429,6 +469,7 @@ export const translations = {
 
         // Video Section
         video: {
+            eyebrow: "فيديو",
             title: "جولة في قلب المحجر",
             subtitle: "اكتشف عملية الاستخراج ومنشآتنا في هذا الفيديو."
         },
@@ -446,6 +487,8 @@ export const translations = {
             quarryLocation: "موقع المحجر",
             quarryAddress: "بالقرب من أغبالو أقرار، بهليل",
             whatsapp: "واتساب",
+            whatsappText: "اضغط للمحادثة",
+            legalLabel: "معلومات قانونية:",
             formTitle: "طلب عرض سعر",
             formName: "الاسم الكامل",
             formEmail: "البريد الإلكتروني",
@@ -484,8 +527,13 @@ export const translations = {
             quickLinks: "روابط سريعة",
             products: "المنتجات",
             procedures: "الإجراءات",
+            gallery: "معرض الصور",
             contact: "اتصل بنا",
+            contactTitle: "اتصل بنا",
+            legalTitle: "معلومات قانونية",
             legal: "الشروط القانونية",
+            clientPortal: "فضاء الزبناء",
+            adminPortal: "دخول الإدارة",
             copyright: "© 2026 شركة ح.ح إستثمار. جميع الحقوق محفوظة.",
             madeWith: "الجودة والاستدامة 🇲🇦"
         }
