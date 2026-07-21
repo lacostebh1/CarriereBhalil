@@ -5,8 +5,11 @@
 
 import { createClient } from '@supabase/supabase-js';
 
-const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
-const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
+// Projet Supabase de la société (la clé "publishable" est conçue pour être
+// publique — la sécurité vient de l'authentification et des règles RLS).
+// Les variables d'environnement Vercel, si définies, restent prioritaires.
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || 'https://dswtflkimflawrfektfg.supabase.co';
+const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || 'sb_publishable_0Z-bqfZmIq5S0qHWN5qo4g_ojwetzvd';
 
 export const supabase = (SUPABASE_URL && SUPABASE_KEY)
     ? createClient(SUPABASE_URL, SUPABASE_KEY)
