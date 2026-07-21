@@ -291,6 +291,8 @@ function renderNavigation() {
     setText('nav-contact', t('nav.contact'));
     setText('nav-client-btn', t('nav.clientButton'));
     setText('lang-text', t('nav.langSwitch'));
+    setText('nav-brand-subtitle', t('nav.brandSubtitle'));
+    setText('footer-brand-subtitle', t('nav.brandSubtitle'));
 
     const langFlag = $('#lang-flag');
     if (langFlag) {

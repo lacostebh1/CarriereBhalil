@@ -13,7 +13,8 @@ export const translations = {
             contact: "Contact",
             langSwitch: "العربية",
             clientButton: "Espace Client",
-            logout: "Déconnexion"
+            logout: "Déconnexion",
+            brandSubtitle: "Carrière Bhalil"
         },
 
         // Hero Section
@@ -281,7 +282,8 @@ export const translations = {
             contact: "اتصل بنا",
             langSwitch: "Français",
             clientButton: "فضاء الزبناء",
-            logout: "تسجيل الخروج"
+            logout: "تسجيل الخروج",
+            brandSubtitle: "محجر البهاليل"
         },
 
         // Hero Section
